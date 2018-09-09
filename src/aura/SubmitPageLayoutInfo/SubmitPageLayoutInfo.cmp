@@ -1,0 +1,45 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="SubmitPageLayoutInfo_LEX_Controller" >
+    
+<!-- 
+@Author: Pablo Gonzalez - 2018
+
+This component allows you to submit the name of a page layout (following its Metadata API naming convention).
+Upon submit, the component will create a record of type Translation_Context__c, which will show all 
+the translatable items of the page layout (represented as Translation_Key__c records).
+-->
+    
+	<aura:attribute name="showSpinner" type="boolean" default="false"/>
+    
+    <aura:if isTrue="{!v.showSpinner}">
+		<div class="spinnerHolder">
+        <lightning:spinner alternativeText="Loading" size="large" />
+    	</div>
+ 	</aura:if>
+    
+    
+
+ 	<!-- INSTRUCTIONS FOR THE USER -->
+   <section id="Instructions" class="slds-p-bottom_medium">
+    
+        <div class="slds-text-body_regular slds-p-bottom_small">Enter the name of the page layout that you wish to download translation info for.</div>
+        <div class="slds-text-body_regular slds-p-bottom_small">The layout name must follow the format described by the Metadata API i.e <b>Account-Account Layout</b>, otherwise an error will occur.</div>
+       <div class="slds-text-body_regular">The resulting translation info record can be found in the Layouts Translation Info tab and it will have an attachment detailing all the translation information.</div>
+
+    </section>
+    
+    <!-- FORM WHERE PAGE LAYOUT NAME IS ENTERED -->
+    <div class="slds-form-element">
+  <label class="slds-form-element__label" for="form-element-03">
+    <abbr class="slds-required" title="required">*</abbr>Page Layout Name</label>
+  <div class="slds-form-element__control">
+    <lightning:input type="text" aura:id="layoutField" id="form-element-03" class="slds-input" placeholder="ObjectName-Layout Name"  />
+  </div>
+	</div>
+     
+
+    <!-- SUBMIT BUTTON -->
+    <section>
+        <lightning:button variant="brand" class="slds-m-top_large" label="Get Layout Translation Info" title="Get Layout Translation Info" onclick="{!c.sendPageLayoutNameToApexController}"/>
+    </section>
+	
+</aura:component>

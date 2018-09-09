@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global">
+    
+    
+    <lightning:accordion aura:id="accordion" >
+        <lightning:accordionSection label="How to use this page">
+            This page allows you to work with Page Layout-Based metadata in order to help you speed up your page layout translation process. Select one of the items below to get started.
+        </lightning:accordionSection>
+        <lightning:accordionSection name="A" label="Get Translatable Items from a Page Layout">
+            <c:SubmitPageLayoutInfo/>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="B" label="Merge or Delete existing page layout translation records">
+           <c:TranslationsMerger/>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="C" label="Compare a Page Layout Translation File">
+            <c:CompareTranslationFiles/>
+        </lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>

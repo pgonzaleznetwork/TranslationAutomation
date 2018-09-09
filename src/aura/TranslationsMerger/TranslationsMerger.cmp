@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global" controller="TranslationsMerger_LEX_Controller" >
+    
+    <!-- 
+	This component allows you to view and delete existing translation info files. It also allows you to merge them by
+	deduping common fields and generating a file that is placed in the documents tab. 
+	-->
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="5"/>
+    <aura:attribute name="selectedRecords" type="Object[]"/>
+    <aura:attribute name="noResults" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init }"/>
+    
+    <section id="Instructions" class="slds-p-bottom_medium">
+        
+        <div class="slds-text-body_regular slds-p-bottom_medium">Use this tool to access, merge and delete existing page layout translation files.</div>
+        <div class="slds-text-body_regular">Use the <b>Merge Translation Files</b> button  when the selected layouts have common fields (i.e two layouts from the same object). This allows you to consolidate all the translatable items for a single object into a single file (common fields are deduplicated). The result file can be found on the Documents tab, under the Translation Files folder.</div>
+    </section>
+    
+    <!-- the container element determine the height of the datatable -->
+    <div style="height: 150px">
+        <lightning:datatable 
+            columns="{!v.columns }"
+            data="{!v.data }"
+            keyField="id"
+            maxRowSelection="{!v.maxRowSelection }"
+            onrowselection="{!c.onSelection}"/>
+    </div>
+
+    
+    <section>
+        <lightning:button variant="brand" class="slds-m-top_large" label="Merge Translation Files" title="Merge Translation Files" onclick="{!c.submitMergeRecords}" disabled="{!v.noResults == TRUE ? 'true' : 'false'}"/>
+        <lightning:button variant="destructive" class="slds-m-top_large" label="Delete Translation Files" title="Delete Translation Files" onclick="{!c.deleteRecords}" disabled="{!v.noResults == TRUE ? 'true' : 'false'}"/>
+    </section>
+    
+	
+</aura:component>

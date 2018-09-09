@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Translation Automation</fullName>
+    <types>
+        <members>PageLayoutMetadata</members>
+        <members>PageLayoutMetadataI</members>
+        <members>PageLayoutMetadataMock</members>
+        <members>PageLayoutMetadata_Test</members>
+        <members>PageLayoutTranslatorFacade</members>
+        <members>SFMD</members>
+        <members>SubmitPageLayoutInfo_LEX_Controller</members>
+        <members>TranslatableMetadata</members>
+        <members>TranslatableMetadataFactory</members>
+        <members>TranslatableMetadataFactory_Test</members>
+        <members>TranslationFileBuilder</members>
+        <members>TranslationFileBuilder_Test</members>
+        <members>TranslationKey</members>
+        <members>TranslationKeyFactory</members>
+        <members>TranslationsMergerApex_Test</members>
+        <members>TranslationsMerger_LEX_Controller</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>CompareTranslationFiles</members>
+        <members>PageLayoutTranslationContainer</members>
+        <members>SubmitPageLayoutInfo</members>
+        <members>TranslationsMerger</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Translation_Automation</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Page_Layout_Translation_Manager_Setting__mdt.Page_Layout_Name_in_Tests__c</members>
+        <members>Translation_Context__c.Context_Type__c</members>
+        <members>Translation_Context__c.Record_Link__c</members>
+        <members>Translation_Key__c.Default_Label__c</members>
+        <members>Translation_Key__c.Key__c</members>
+        <members>Translation_Key__c.Translation_Context__c</members>
+        <members>Translation_Key__c.Type__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Page_Layout_Translation_Manager_Setting__mdt</members>
+        <members>Translation_Context__c</members>
+        <members>Translation_Key__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Translation_Context__c</members>
+        <members>Translation_Manager</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Translation_Automation_UtilityBar</members>
+        <members>Translation_Context_Record_Page</members>
+        <members>Translation_Manager</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Page_Layout_Translation_Manager_Setting__mdt-Page Layout Translation Manager Setting Layout</members>
+        <members>Translation_Context__c-Translation Context Layout</members>
+        <members>Translation_Key__c-Translation Key Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Translation_Context__c.All</members>
+        <members>Translation_Key__c.All</members>
+        <members>Translation_Key__c.All_Keys</members>
+        <name>ListView</name>
+    </types>
+    <version>43.0</version>
+</Package>

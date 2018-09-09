@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    
+ 
+   <section id="Instructions" class="slds-p-bottom_medium">
+   
+        <div class="slds-text-body_regular ">Use this tool to compare a language-specific <b>untranslated</b> file with a Layout Translation Info document.</div>
+       <div class="slds-text-body_regular slds-p-bottom_small">The result will be a file showing only the items that are found in both <b>Layout Translation Info</b> and the <b>Untranslated File</b>, meaning the ones that belong to a specific layout and that haven't been translated.</div>
+       <div class="slds-text-body_regular">To get the Untranslated file go to <b>Setup</b> > <b>Workbench</b> > <b>Export</b> > <b>Untranslated File</b></div>
+        <div class="slds-text-body_regular">Then copy+paste the contents of both files in the fields below and click the <b>Compare Files</b> button</div>
+
+
+    </section>
+    
+     <div class="slds-form-element">
+  <div class="slds-form-element__control">
+     <lightning:textarea name="Untranslated" 
+     id="form-element-03" aura:id="untranslatedText" label="Untranslated File"/>
+  </div>
+</div>
+    
+         <div class="slds-form-element">
+  <div class="slds-form-element__control">
+     <lightning:textarea name="layoutInfo" label="Layout Info File"
+     id="form-element-04" aura:id="layoutInfoText"/>
+  </div>
+             
+</div>
+    
+    <section>
+        <lightning:button variant="brand" class="slds-m-top_large" label="Compare Files" title="Compare Files" onclick="{!c.compareTranslationFiles}"/>
+    </section>
+        
+	
+</aura:component>
